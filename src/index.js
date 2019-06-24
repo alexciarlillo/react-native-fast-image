@@ -29,38 +29,34 @@ function FastImageBase({
 
     if (fallback) {
         return (
-            <View style={[styles.imageContainer, style]} ref={forwardedRef}>
-                <Image
-                    {...props}
-                    tintColor={tintColor}
-                    style={StyleSheet.absoluteFill}
-                    source={resolvedSource}
-                    onLoadStart={onLoadStart}
-                    onProgress={onProgress}
-                    onLoad={onLoad}
-                    onError={onError}
-                    onLoadEnd={onLoadEnd}
-                />
-                {children}
-            </View>
-        )
-    }
 
-    return (
-        <View style={[styles.imageContainer, style]} ref={forwardedRef}>
-            <FastImageView
+            <Image
                 {...props}
                 tintColor={tintColor}
                 style={StyleSheet.absoluteFill}
                 source={resolvedSource}
-                onFastImageLoadStart={onLoadStart}
-                onFastImageProgress={onProgress}
-                onFastImageLoad={onLoad}
-                onFastImageError={onError}
-                onFastImageLoadEnd={onLoadEnd}
+                onLoadStart={onLoadStart}
+                onProgress={onProgress}
+                onLoad={onLoad}
+                onError={onError}
+                onLoadEnd={onLoadEnd}
+                ref={forwardedRef}
             />
-            {children}
-        </View>
+        )
+    }
+
+    return (
+        <FastImageView
+            {...props}
+            style={StyleSheet.absoluteFill}
+            source={resolvedSource}
+            onFastImageLoadStart={onLoadStart}
+            onFastImageProgress={onProgress}
+            onFastImageLoad={onLoad}
+            onFastImageError={onError}
+            onFastImageLoadEnd={onLoadEnd}
+            ref={forwardedRef}
+        />
     )
 }
 
