@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.summary = "🚩 FastImage, performant React Native image component."
 
   s.authors = { "Dylan Vann" => "dylan@dylanvann.com" }
-  s.homepage = "https://github.com/DylanVann/react-native-fast-image#readme"
+  s.homepage = "https://github.com/alexciarlillo/react-native-fast-image#readme"
   s.license = "MIT"
 
   s.platform = :ios, "8.0"
