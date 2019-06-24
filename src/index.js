@@ -29,7 +29,7 @@ function FastImageBase({
 
     if (fallback) {
         return (
-            <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+            <React.Fragment>
                 <Image
                     {...props}
                     tintColor={tintColor}
@@ -42,12 +42,12 @@ function FastImageBase({
                     onLoadEnd={onLoadEnd}
                 />
                 {children}
-            </View>
+            </React.Fragment>
         )
     }
 
     return (
-        <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+        <React.Fragment>
             <FastImageView
                 {...props}
                 tintColor={tintColor}
@@ -60,7 +60,7 @@ function FastImageBase({
                 onFastImageLoadEnd={onLoadEnd}
             />
             {children}
-        </View>
+        </React.Fragment>
     )
 }
 
